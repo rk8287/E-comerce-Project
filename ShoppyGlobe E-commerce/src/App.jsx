@@ -3,10 +3,14 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import NotFound from "./pages/NotFound";
 import Home from './pages/Home';
 import Register from './pages/Register';
 import Login from './pages/Login';
+import CheckoutPage from './pages/CheckoutPage';
+import Success from './pages/Success';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import NotFound from './components/NotFound';
 
 const ProductList = lazy(() => import('./components/ProductList'));
 const ProductDetail = lazy(() => import('./components/ProductDetail'));
@@ -25,10 +29,14 @@ function App() {
             <Route path="/login" element={<Login/>} />
             <Route path="/productDetails/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkOut" element={<CheckoutPage />} />
+            <Route path="/paymentSuccess" element={<Success />} />
+            
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </main>
+      <ToastContainer />
       <Footer />
     </Router>
   );

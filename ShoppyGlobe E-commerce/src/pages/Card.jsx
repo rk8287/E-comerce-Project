@@ -37,7 +37,7 @@ function Card({ title, image, price, rating }) {
         {/* Price and Button aligned at bottom */}
         <div className="mt-auto flex items-center justify-between">
           <span className="text-2xl font-bold text-gray-900 dark:text-white truncate max-w-[100px]">
-            ₹{price}
+            ${price}
           </span>
           <a
             href="#"
